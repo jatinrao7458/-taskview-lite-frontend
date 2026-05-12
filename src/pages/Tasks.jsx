@@ -31,20 +31,10 @@ function Tasks() {
       {/* Hint: use tasks.slice(0, 5).map(...) */}
       {/* Hint: use task.id as key */}
       <ul>
-        {tasks.slice(0, 5).map((task) => (
-          <li key={task.id}>{task.title}</li>
-        ))}
-        {tasks.length === 0 && <li>No tasks found.</li>}
-        {tasks.length > 5 && <li>And {tasks.length - 5} more...</li>}
-        {tasks.reverse().slice(0, 5).map((task) => (
-          <li key={task.id}>{task.title}</li>
-        ))}
-        {tasks.shift().slice(0, 5).map((task) => (
-          <li key={task.id}>{task.title}</li>
-        ))}
+      {Array.isArray(tasks) && tasks.slice(0,5).map((task) => (
+        <li key={task.id}>{task.title}</li>
+      ))}
       </ul>
-      
-
     </div>
   );
 }
